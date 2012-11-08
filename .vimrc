@@ -55,7 +55,7 @@ vnoremap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=80
 
 " No more arrow keys
 nnoremap <up> <nop>
@@ -77,3 +77,7 @@ vnoremap <F1> <ESC>
 " Just gonna try out jj as ESC
 inoremap jj <ESC>
 
+" Load a local file, if present
+if filereadable(glob("~/.vimrc.local")) 
+    source ~/.vimrc.local
+endif
