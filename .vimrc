@@ -77,6 +77,10 @@ vnoremap <F1> <ESC>
 " Just gonna try out jj as ESC
 inoremap jj <ESC>
 
+" Tabbing
+:command NN tabnext
+:command PP tabprevious
+
 " Load a local file, if present
 if filereadable(glob("~/.vimrc.local")) 
     source ~/.vimrc.local
