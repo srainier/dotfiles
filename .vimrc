@@ -55,7 +55,9 @@ vnoremap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=80
+if has('colorcolumn')
+    set colorcolumn=80
+endif
 
 " No more arrow keys
 nnoremap <up> <nop>
