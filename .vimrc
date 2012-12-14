@@ -52,7 +52,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Handle long lines properly
-set wrap
+set nowrap
 set textwidth=79
 set formatoptions=qrn1
 if has('colorcolumn')
