@@ -52,10 +52,12 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Handle long lines properly
-set wrap
+set nowrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=80
+if has('colorcolumn')
+    set colorcolumn=80
+endif
 
 " No more arrow keys
 nnoremap <up> <nop>
@@ -76,6 +78,10 @@ vnoremap <F1> <ESC>
 
 " Just gonna try out jj as ESC
 inoremap jj <ESC>
+
+" Tabbing
+:command NN tabnext
+:command PP tabprevious
 
 " Load a local file, if present
 if filereadable(glob("~/.vimrc.local")) 
