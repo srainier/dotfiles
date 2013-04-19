@@ -19,6 +19,9 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
+"Many people like to remove any extra whitespace from the ends of lines. Here is one way to do it when saving your file.
+"autocmd BufWritePre *.py normal m`:%s/\s\+$//e``
+
 " Nice behavior
 set encoding=utf-8
 set scrolloff=3
@@ -55,9 +58,7 @@ vnoremap <tab> %
 set nowrap
 set textwidth=79
 set formatoptions=qrn1
-if has('colorcolumn')
-    set colorcolumn=80
-endif
+set colorcolumn=80
 
 " No more arrow keys
 nnoremap <up> <nop>
@@ -82,6 +83,20 @@ inoremap jj <ESC>
 " Tabbing
 :command NN tabnext
 :command PP tabprevious
+
+" Django stuff from: http://blog.fluther.com/django-vim/
+" ENABLE OMNICOMPLETION
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+" DJANGO_SETTINGS_FILE=myapp.settings vim
+
+" employinsight hamlpy and sass auto-compilation
+autocmd BufWritePost *.hamlpy !hamlpy <afile> > <afile>:r.html
+"autocmd BufWritePost *.scss !fab sass
+autocmd BufWritePost *.py !pyflakes <afile>
+autocmd BufWritePost *.js jshint <afile>
 
 " Load a local file, if present
 if filereadable(glob("~/.vimrc.local")) 
