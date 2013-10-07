@@ -99,6 +99,13 @@ autocmd BufWritePost *.hamlpy !hamlpy <afile> > <afile>:r.html
 " https://github.com/vim-scripts/pep8
 " https://github.com/davidhalter/jedi-vim
 " https://github.com/pangloss/vim-javascript
+" Add new plugs with:
+" git submodule add /path/to/repo bundle/<name>
+" Update plugins:
+" git submodule init
+" git submodule update
+" git submodule foreach git submodule init
+" git submodule foreach git submodule update
 
 " you will be able to be inside a method and type 'za' to open and close a fold.
 "set foldmethod=indent
