@@ -1,6 +1,6 @@
-
 # Load ~/.bash_prompt, ~/.exports, ~/.aliases, ~/.functions and ~/.paths
-for file in ~/.{bash_prompt,exports,aliases,functions,paths}; do
+# Also including a locals file.
+for file in ~/.{bash_prompt,exports,aliases,functions,paths,bash_profile_locals}; do
     [ -r "$file" ] && source "$file"
 done
 unset file
